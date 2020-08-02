@@ -17,10 +17,6 @@ which websites, applications and more can be hosted via a rapidly deployable/des
 * Bash script must be supported
 * [Keystone](https://github.com/jaytwitch/keystone) containers should be deployed and running
 
-## What's Deployed
-
-- STILL WRITING
-
 ## Configuration
 
 - STILL WRITING
@@ -28,3 +24,11 @@ which websites, applications and more can be hosted via a rapidly deployable/des
 ## Usage
 
 A touchstone deployment is designed to be entirely self-contained on a 1 touchstone deployment per website/project basis.
+
+* Place your site/project/application code inside the `/code` folder - this is the same as placing something within `/var/www/html`
+
+### Deploying to...
+
+#### Local Development (ENV = Dev)
+
+* Run `dev.sh` to start the container -- it'll create a `projectname_dev` container
