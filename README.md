@@ -35,10 +35,30 @@ which websites, applications and more can be hosted via a rapidly deployable/des
 
 A touchstone deployment is designed to be entirely self-contained on a 1 touchstone deployment per website/project basis.
 
+* Clone the **touchstone** project, you can rename the folder to whatever you like (name it to the site URL e.g. mywebsite.tld, for example);
+* Run `init.sh` which will delete the .git related files so that there's no clashes between touchstone and your site code repo
 * Place your site/project/application code inside the `/code` folder - this is the same as placing something within `/var/www/html`
+* Copy `docker/.env.sample` to `docker/.env` and edit the .env file to your tastes - info described above
+* You're now ready to deploy (the whole folder!)
 
 ### Deploying to...
 
-#### Local Development (ENV = Dev)
+#### Local Development (ENV = DEV)
 
 * Run `dev.sh` to start the container -- it'll create a `projectname_dev` container
+* Add your `DEV_URL` to your OS's `hosts` file
+* Visit the `DEV_URL`
+
+#### Staging Environment (ENV = STG)
+
+* Run `stg.sh` to start the container -- it'll create a `projectname_dev` container
+* Add your `STG_URL` to your OS's `hosts` file, **OR**;
+* Make sure there's an A record pointing to your `STG_URL`
+* Visit the `STG_URL`
+
+#### Production Environment (ENV = STG)
+
+* Run `prd.sh` to start the container -- it'll create a `projectname_dev` container
+* Add your `PRD_URL` to your OS's `hosts` file, **OR**;
+* Make sure there's an A record pointing to your `PRD_URL`
+* Visit the `PRD_URL`
