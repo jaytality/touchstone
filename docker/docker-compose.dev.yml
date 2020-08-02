@@ -6,8 +6,8 @@ services:
       - core_db
     container_name: ${PROJECTNAME}_dev
     environment:
-      VIRTUAL_HOST: ${PROJECTNAME}.local
-      LETSENCRYPT_HOST: ${PROJECTNAME}.local
+      VIRTUAL_HOST: ${DEV_HOST}
+      LETSENCRYPT_HOST: ${DEV_HOST}
 
 networks:
     default:
