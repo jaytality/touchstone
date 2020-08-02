@@ -6,8 +6,8 @@ services:
       - core_db
     container_name: ${PROJECTNAME}_dev
     environment:
-      VIRTUAL_HOST: ${STG_HOST}
-      LETSENCRYPT_HOST: ${STG_HOST}
+      VIRTUAL_HOST: ${STG_URL}
+      LETSENCRYPT_HOST: ${STG_URL}
       LETSENCRYPT_MAIL: ${STG_SSL}
 
 networks:

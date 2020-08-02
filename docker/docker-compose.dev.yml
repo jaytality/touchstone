@@ -6,8 +6,8 @@ services:
       - core_db
     container_name: ${PROJECTNAME}_dev
     environment:
-      VIRTUAL_HOST: ${DEV_HOST}
-      LETSENCRYPT_HOST: ${DEV_HOST}
+      VIRTUAL_HOST: ${DEV_URL}
+      LETSENCRYPT_HOST: ${DEV_URL}
       LETSENCRYPT_MAIL: ${DEV_SSL}
 
 networks:

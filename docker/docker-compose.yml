@@ -17,8 +17,8 @@ services:
       - ../data/logs/error.log:/var/www/error.log
       - ../data/logs/access.log:/var/www/access.log
     environment:
-      VIRTUAL_HOST: ${PRD_HOST}, www.${PRD_HOST}
-      LETSENCRYPT_HOST: ${PRD_HOST}
+      VIRTUAL_HOST: ${PRD_URL}, www.${PRD_URL}
+      LETSENCRYPT_HOST: ${PRD_URL}
       LETSENCRYPT_EMAIL: ${PRD_SSL}
     restart: always
 
