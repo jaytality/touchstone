@@ -6,11 +6,11 @@ services:
       - core_db
     container_name: ${PROJECTNAME}_dev
     environment:
-      VIRTUAL_HOST: ${DEV_HOST}
-      LETSENCRYPT_HOST: ${DEV_HOST}
-      LETSENCRYPT_MAIL: ${DEV_SSL}
+      VIRTUAL_HOST: ${STG_HOST}
+      LETSENCRYPT_HOST: ${STG_HOST}
+      LETSENCRYPT_MAIL: ${STG_SSL}
 
 networks:
     default:
       external:
-        name: ${DEV_NET}
+        name: ${STG_NET}

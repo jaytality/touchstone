@@ -17,12 +17,12 @@ services:
       - ../data/logs/error.log:/var/www/error.log
       - ../data/logs/access.log:/var/www/access.log
     environment:
-      VIRTUAL_HOST: ${WEB_HOST}, www.${WEB_HOST}
-      LETSENCRYPT_HOST: ${WEB_HOST}
-      LETSENCRYPT_EMAIL: ${SSL_MAIL}
+      VIRTUAL_HOST: ${PRD_HOST}, www.${PRD_HOST}
+      LETSENCRYPT_HOST: ${PRD_HOST}
+      LETSENCRYPT_EMAIL: ${PRD_SSL}
     restart: always
 
 networks:
     default:
       external:
-        name: ${NET_NAME}
+        name: ${PRD_NET}
