@@ -19,7 +19,17 @@ which websites, applications and more can be hosted via a rapidly deployable/des
 
 ## Configuration
 
-- STILL WRITING
+* Copy `docker/.env.sample` to `docker/.env` and edit the .env file to your tastes
+* Configurations are split into 3 deployment channels - DEV, STG, PRD
+    * DEV - your development area, you (and your devs) use this locally to check your own work and changes
+    * STG - your staging area, stakeholders/clients use this environment to check and confirm work
+    * PRD - your production area, this is the live all-systems-go environment
+
+| setting | description |
+| ------- | ----------- |
+| DEV/STG/PRD**_URL** | the URL that the container will respond to |
+| DEV/STG/PRD**_NET** | the docker network the container will reside in |
+| DEV/STG/PRD**_SSL** | the email address SSL certificates will be registered with Let's Encrypt with |
 
 ## Usage
 
