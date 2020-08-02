@@ -27,9 +27,9 @@ which websites, applications and more can be hosted via a rapidly deployable/des
 
 | setting | description |
 | ------- | ----------- |
-| DEV/STG/PRD**_URL** | the URL that the container will respond to |
-| DEV/STG/PRD**_NET** | the docker network the container will reside in |
-| DEV/STG/PRD**_SSL** | the email address SSL certificates will be registered with Let's Encrypt with |
+| DEV/STG/PRD **_URL** | the URL that the container will respond to |
+| DEV/STG/PRD **_NET** | the docker network the container will reside in |
+| DEV/STG/PRD **_SSL** | the email address SSL certificates will be registered with Let's Encrypt with |
 
 ## Usage
 
