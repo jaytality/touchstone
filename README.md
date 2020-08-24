@@ -62,3 +62,16 @@ A touchstone deployment is designed to be entirely self-contained on a 1 touchst
 * Add your `PRD_URL` to your OS's `hosts` file, **OR**;
 * Make sure there's an A record pointing to your `PRD_URL`
 * Visit the `PRD_URL`
+
+### Using Wordpress
+
+Wordpress has a bit of a heartattack with this repo for some reason. You can force things in a cheeky manner by adding this to the top of your `wp-config.php` before the defines for the DB spec etc.
+
+```
+define( 'FORCE_SSL_ADMIN', true );
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS']='on';
+}
+```
+
+Only use this in **production** (or a web facing staging) environment though - when developing on local, things should work just fine.
