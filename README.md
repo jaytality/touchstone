@@ -75,3 +75,9 @@ if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
 ```
 
 Only use this in **production** (or a web facing staging) environment though - when developing on local, things should work just fine.
+
+To make things weirded - if you've just unzipped `latest.zip` and moved the contents of `wordpress/` into `code/` - you'll need to run the following commands:
+
+`find code -type d -exec chmod 755 {} \;` from the touchstone root, finally, `chmod 775 code` itself.
+
+`wp-config.php` should be `0644` (this is debatable for some, but it'll break touchstone if you don't for us.
