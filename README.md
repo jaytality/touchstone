@@ -81,3 +81,9 @@ To make things weirded - if you've just unzipped `latest.zip` and moved the cont
 `find code -type d -exec chmod 755 {} \;` from the touchstone root, finally, `chmod 775 code` itself.
 
 `wp-config.php` should be `0644` (this is debatable for some, but it'll break touchstone if you don't for us.
+
+#### Installing Themes and Plugins
+
+Best be using SCP for this one. THere's too much fiddling to try and get file uploads in Wordpress working for plugins and mods that need to unzip, etc.
+Media uploaded into posts, should be fine though.
+
