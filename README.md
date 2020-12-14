@@ -87,3 +87,7 @@ To make things weirded - if you've just unzipped `latest.zip` and moved the cont
 Best be using SCP for this one. THere's too much fiddling to try and get file uploads in Wordpress working for plugins and mods that need to unzip, etc.
 Media uploaded into posts, should be fine though.
 
+### Getting Cloudflare to correctly point to your Touchstone App Containers
+
+Simply make sure the following SSL/TLS settings are set - appropriate Records with Cloudflare Proxy enabled will then point correctly
+![Cloudflare SSL/TLS Settings](https://raw.githubusercontent.com/jaytwitch/touchstone/master/ssltlscloudflare.jpg)
