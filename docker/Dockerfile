@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -6,14 +6,17 @@ RUN apt-get update && apt-get install -y \
         libpng-dev \
         libyaml-dev \
         libzip-dev \
-    && docker-php-ext-install -j$(nproc) iconv mysqli pdo pdo_mysql \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+        libyaml-doc \
+    && docker-php-ext-install -j$(nproc) iconv mysqli pdo_mysql \
+    && docker-php-ext-configure gd  --with-freetype --with-jpeg \
     && pecl install yaml \
     && docker-php-ext-enable yaml \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install -j$(nproc) zip
 
 RUN a2enmod rewrite headers
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY php.ini /usr/local/etc/php/conf.d/php.ini
 
